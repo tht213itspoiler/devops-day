@@ -17,6 +17,7 @@ phases:
       - cp -r public/ output/public
       - cp package.json output/
       - cp next.config.js output/
+      - echo "Finsih build"
   post_build:
     commands:
       - echo "Build completed successfully..."
