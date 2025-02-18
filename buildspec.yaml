@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-version:
+      nodejs: 18
+    commands:
+      - echo "Installing dependencies..."
+      - npm install
+  build:
+    commands:
+      - echo "Building Next.js application..."
+      - npm run build
+      - echo "Copying build output"
+      - mkdir -p output
+      - cp -r .next/ output/.next
+      - cp -r public/ output/public
+      - cp package.json output/
+      - cp next.config.js output/
+  post_build:
+    commands:
+      - echo "Build completed successfully..."
+artifacts:
+  files:
+    - output/**/*
+  base-directory: output
