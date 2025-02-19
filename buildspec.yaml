@@ -19,8 +19,8 @@ phases:
       # - cp package.json output/
       # # - cp next.config.js output/
       # - echo "Finsih build"
-      - echo "Exporting static files..."
-      - npm run export
+      # - echo "Exporting static files..."
+      # - npm run export
   post_build:
     commands:
       - echo "Build completed on `date`"
