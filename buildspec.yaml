@@ -12,17 +12,20 @@ phases:
     commands:
       - echo "Building Next.js application..."
       - npm run build
-      - echo "Copying build output"
-      - mkdir -p output
-      - cp -r .next/ output/.next
-      - cp -r public/ output/public
-      - cp package.json output/
-      # - cp next.config.js output/
-      - echo "Finsih build"
+      # - echo "Copying build output"
+      # - mkdir -p output
+      # - cp -r .next/ output/.next
+      # - cp -r public/ output/public
+      # - cp package.json output/
+      # # - cp next.config.js output/
+      # - echo "Finsih build"
+      - echo "Exporting static files..."
+      - npm run export
   post_build:
     commands:
-      - echo "Build completed successfully"
+      - echo "Build completed on `date`"
 artifacts:
   files:
-    - output/**/*
-  base-directory: output
+    - appspec.yml
+    - '**/*'
+  base-directory: out
