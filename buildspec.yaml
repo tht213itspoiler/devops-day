@@ -12,6 +12,7 @@ phases:
     commands:
       - echo "Building Next.js application..."
       - npm run build
+      - mkdir -pv out/scripts
       - cp appspec.yml ./out/appspec.yml
       - cp -r codedeploy-scripts/* out/scripts/
   post_build:
