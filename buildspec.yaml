@@ -7,18 +7,18 @@ phases:
       nodejs: 18
     commands:
       - echo "Installing dependencies..."
-      - npm install
+      - npm install --frozen-lockfile
   build:
     commands:
       - echo "Building Next.js application..."
       - npm run build
-      - mkdir -pv out/scripts
-      - cp appspec.yml ./out/appspec.yml
-      - cp -r codedeploy-scripts/* out/scripts/
+      - mkdir -pv deployment/scripts
+      - cp -r .next public package.json package-lock.json appspec.yml deployment/
+      - cp -r codedeploy-scripts/* deployment/scripts/
   post_build:
     commands:
       - echo "Build completed on `date`"
 artifacts:
   files:
     - '**/*'
-  base-directory: out
+  base-directory: deployment
