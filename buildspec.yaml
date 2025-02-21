@@ -26,6 +26,7 @@ phases:
       - echo "Build completed on `date`"
 artifacts:
   files:
+    - codedeploy-scripts/*
     - appspec.yml
     - '**/*'
   base-directory: out
