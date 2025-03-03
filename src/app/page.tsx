@@ -8,15 +8,15 @@ export default function Home() {
           className="dark:invert"
           src="/endava.svg"
           alt="Endava logo"
-          width={180}
-          height={38}
+          width={360}
+          height={76}
           priority
         />
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            We build it - We run it{" "}
+            {" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
+            We build it - We run it
             </code>
             .
           </li>
